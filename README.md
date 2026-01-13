@@ -312,7 +312,7 @@ Bayanmunkh
 ## 🔗 Холбоосууд
 
 - [NPM Package](https://www.npmjs.com/package/bayanmunkh-ui-components)
-- [GitHub Repository](https://github.com/your-username/bayanmunkh-ui-components)
+- [GitHub Repository](https://github.com/Bayanmunkh20/bayanmunkh-ui-components)
 
 ## 🙏 Баярлалаа
 
