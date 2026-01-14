@@ -1,11 +1,9 @@
-// components/ui/toaster.tsx
 "use client";
 
 import {
   Toast,
   ToastClose,
   ToastDescription,
-  ToastProvider,
   ToastTitle,
   ToastViewport,
   useToast,
@@ -15,24 +13,22 @@ export function Toaster() {
   const { toasts } = useToast();
 
   return (
-    <ToastProvider>
-      {toasts.map(function ({ id, title, description, icon, ...props }) {
-        return (
-          <Toast key={id} {...props}>
-            <div className="flex items-start gap-3">
-              {icon && <div className="mt-0.5">{icon}</div>}
-              <div className="grid gap-1 flex-1">
-                {title && <ToastTitle>{title}</ToastTitle>}
-                {description && (
-                  <ToastDescription>{description}</ToastDescription>
-                )}
-              </div>
+    <>
+      {toasts.map(({ id, title, description, icon, ...props }) => (
+        <Toast key={id} {...props}>
+          <div className="flex items-start gap-3">
+            {icon && <div className="mt-0.5">{icon}</div>}
+            <div className="grid gap-1 flex-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
             </div>
-            <ToastClose />
-          </Toast>
-        );
-      })}
+          </div>
+          <ToastClose />
+        </Toast>
+      ))}
       <ToastViewport />
-    </ToastProvider>
+    </>
   );
 }
